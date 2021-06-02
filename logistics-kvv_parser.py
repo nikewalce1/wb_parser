@@ -20,15 +20,16 @@ def get_content(html):
     count = 0
     for i in range(len(td)):
         if i == count:
-            count += 7
+            count += 9
             percent.append({
                 'category': td[i].get_text(),
                 'subject': td[i+1].get_text(),
                 'percent': td[i+2].get_text(),
-                'logistics_cost': td[i+3].get_text(),
-                'storage_cost': td[i+4].get_text(),
-                'delivery_storage_in_liters': td[i + 5].get_text(),
-                'paid_acceptance_of_Koledino': td[i + 6].get_text()
+                'logistics_cost_Kazan': td[i+3].get_text(),
+                'logistics_cost_Elektrostal': td[i+4].get_text(),
+                'logistics_cost_other': td[i+5].get_text(),
+                'Storage cost': td[i + 6].get_text(),
+                'paid_acceptance': td[i + 7].get_text()
             })
     data = json.dumps(percent, ensure_ascii=False)
     #load = json.loads(data)
